@@ -2,6 +2,12 @@
   "name": "rk-annual-cycle",
   "version": "1.0.0",
   "description": "Annual Cycle VueComponent",
+  "author": "René Kersten",
+  "license": "MIT",
+  "keywords": [
+    "vue"
+  ],
+  "homepage": "https://github.com/endorfin/rk-annual-cycle",
   "main": "dist/rk-annual-cycle.ssr.js",
   "browser": "dist/rk-annual-cycle.esm.js",
   "module": "dist/rk-annual-cycle.esm.js",
