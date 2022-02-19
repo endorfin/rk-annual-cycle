@@ -44,6 +44,10 @@ export default Vue.extend({
     <div class="wrapper">
       <h1>Annual Cycle</h1>
 
+      <div style="margin-bottom: 45px">
+        <rk-annual-cycle v-model="entries" :editmode="editmode" :hide-label="true" />
+      </div>
+
       <rk-annual-cycle v-model="entries" :editmode="editmode" />
 
       <p>

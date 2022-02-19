@@ -1,5 +1,5 @@
 <template>
-  <tr>
+  <tr class="rk-annual-cycle__row">
     <td class="rk-annual-cycle__name">
       <input
         :value="entry.name"

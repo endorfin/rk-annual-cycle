@@ -1,9 +1,9 @@
 <template>
-  <div class="rk-annual-cycle">
+  <div :class="mainClass">
     <table>
       <thead>
         <tr>
-          <th />
+          <th class="rk-annual-cycle__th-name" />
           <th
             v-for="month in monthNames"
             :key="month"
@@ -48,6 +48,11 @@ export default {
       default: () => false
     },
 
+    hideLabel: {
+      type: Boolean,
+      default: () => false
+    },
+
     monthNames: {
       type: Array,
       default: () => ['Jan', 'Feb', 'Mrz', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
@@ -66,6 +71,15 @@ export default {
     handleInput (value, index) {
       this.$set(this.value, index, value)
     }
+  },
+
+  computed: {
+    mainClass () {
+      return {
+        'rk-annual-cycle': true,
+        'rk-annual-cycle--hide-label': this.hideLabel
+      }
+    }
   }
 }
 </script>
@@ -75,6 +89,19 @@ export default {
     border: 1px solid #000;
     background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .rk-annual-cycle--hide-label {
+    border-left: 0px;
+  }
+
+  .rk-annual-cycle--hide-label .rk-annual-cycle__th-name,
+  .rk-annual-cycle--hide-label .rk-annual-cycle__name {
+    display: none;
+  }
+
+  .rk-annual-cycle--hide-label .rk-annual-cycle__row {
+    height: 30px;
   }
 
   .rk-annual-cycle input {
